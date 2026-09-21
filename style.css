@@ -1,0 +1,1005 @@
+/* =====================================================
+   LANDSLIDE RISK INTELLIGENCE
+   MAIN WEBSITE STYLES
+===================================================== */
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f3f7fc;
+    color: #14213d;
+}
+
+
+/* =========================
+   TOP NAVIGATION
+========================= */
+
+.topbar {
+    height: 76px;
+
+    background: #071a33;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+    color: white;
+
+    position: sticky;
+    top: 0;
+
+    z-index: 1000;
+
+    box-shadow: 0 4px 20px rgba(7, 26, 51, 0.25);
+}
+
+
+/* Brand */
+
+.brand {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 44px;
+    height: 44px;
+
+    border-radius: 12px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(
+        135deg,
+        #16c8ff,
+        #2878ff
+    );
+
+    font-size: 22px;
+
+    box-shadow: 0 0 18px rgba(22, 200, 255, 0.3);
+}
+
+.brand h1 {
+    font-size: 17px;
+
+    letter-spacing: 1.4px;
+}
+
+.brand p {
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    color: #9eb0c9;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+.navbar {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+/* Dropdown container */
+
+.nav-dropdown {
+    position: relative;
+}
+
+
+/* Dropdown button */
+
+.nav-button {
+    border: none;
+
+    background: transparent;
+
+    color: #dce7f5;
+
+    padding: 12px 15px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    border-radius: 8px;
+
+    transition: 0.25s;
+}
+
+.nav-button span {
+    margin-left: 5px;
+
+    font-size: 10px;
+}
+
+.nav-button:hover {
+    background: #102b4d;
+
+    color: #ffffff;
+}
+
+
+/* Dropdown menu */
+
+.dropdown-menu {
+    position: absolute;
+
+    top: 48px;
+    left: 0;
+
+    min-width: 190px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    padding: 8px;
+
+    box-shadow:
+        0 12px 30px rgba(9, 30, 66, 0.18);
+
+    border: 1px solid #e4ebf4;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(8px);
+
+    transition: 0.2s;
+
+    z-index: 2000;
+}
+
+
+/* Show dropdown on hover */
+
+.nav-dropdown:hover .dropdown-menu {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+/* Dropdown links */
+
+.dropdown-menu a {
+    display: block;
+
+    padding: 11px 13px;
+
+    border-radius: 7px;
+
+    color: #31445f;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    transition: 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background: #eef7ff;
+
+    color: #1479d1;
+}
+
+
+/* =========================
+   LIVE STATUS
+========================= */
+
+.live-status {
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 1px;
+
+    color: #dce7f5;
+}
+
+.live-dot {
+    width: 9px;
+    height: 9px;
+
+    background: #22d68a;
+
+    border-radius: 50%;
+
+    box-shadow:
+        0 0 12px rgba(34, 214, 138, 0.8);
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    width: min(1400px, 92%);
+
+    margin: auto;
+
+    padding: 42px 0 60px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-section {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.section-label {
+    font-size: 10px;
+
+    font-weight: 800;
+
+    letter-spacing: 1.7px;
+
+    color: #71829a;
+}
+
+.hero-section h2 {
+    margin-top: 8px;
+
+    font-size: 36px;
+
+    letter-spacing: -0.8px;
+
+    color: #132743;
+}
+
+.hero-section h2 span {
+    color: #168bd4;
+}
+
+.hero-text {
+    margin-top: 10px;
+
+    max-width: 650px;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    color: #718098;
+}
+
+
+/* System status */
+
+.system-status {
+    padding: 13px 18px;
+
+    background: white;
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    color: #42536b;
+
+    box-shadow:
+        0 5px 20px rgba(30, 60, 100, 0.08);
+}
+
+.status-circle {
+    display: inline-block;
+
+    width: 8px;
+    height: 8px;
+
+    margin-right: 7px;
+
+    border-radius: 50%;
+
+    background: #21bd78;
+}
+
+
+/* =========================
+   RISK CARDS
+========================= */
+
+.risk-cards {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+
+    margin-bottom: 24px;
+}
+
+.risk-card {
+    position: relative;
+
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 7px 25px rgba(30, 60, 100, 0.08);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.risk-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(30, 60, 100, 0.13);
+}
+
+
+/* Top coloured line */
+
+.risk-card::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    height: 4px;
+}
+
+.high-card::before {
+    background: #ef4050;
+}
+
+.medium-card::before {
+    background: #f3a712;
+}
+
+.low-card::before {
+    background: #24ad6b;
+}
+
+
+/* Card top */
+
+.card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.risk-icon {
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    font-size: 20px;
+}
+
+.high-card .risk-icon {
+    background: #fff0f1;
+
+    color: #ef4050;
+}
+
+.medium-card .risk-icon {
+    background: #fff7e6;
+
+    color: #e49a08;
+}
+
+.low-card .risk-icon {
+    background: #eaf9f2;
+
+    color: #24a869;
+}
+
+
+/* Risk labels */
+
+.risk-tag {
+    font-size: 10px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+}
+
+.high-card .risk-tag {
+    color: #df3c4b;
+}
+
+.medium-card .risk-tag {
+    color: #d58f08;
+}
+
+.low-card .risk-tag {
+    color: #22965c;
+}
+
+
+/* Numbers */
+
+.risk-card h3 {
+    margin-top: 19px;
+
+    font-size: 39px;
+
+    color: #172941;
+}
+
+.risk-card p {
+    margin-top: 4px;
+
+    font-size: 13px;
+
+    color: #687890;
+}
+
+.risk-card small {
+    display: block;
+
+    margin-top: 20px;
+
+    padding-top: 13px;
+
+    border-top: 1px solid #edf1f6;
+
+    font-size: 10px;
+
+    color: #8b98aa;
+}
+
+
+/* =========================
+   MAP + CHART
+========================= */
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns: 1.5fr 1fr;
+
+    gap: 22px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Panel */
+
+.panel {
+    background: white;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 7px 25px rgba(30, 60, 100, 0.08);
+
+    overflow: hidden;
+}
+
+.map-panel,
+.chart-panel {
+    padding: 24px;
+}
+
+
+/* Panel heading */
+
+.panel-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.panel-label {
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.5px;
+
+    color: #8390a4;
+}
+
+.panel-header h3 {
+    margin-top: 5px;
+
+    font-size: 19px;
+
+    color: #172941;
+}
+
+
+/* Live badge */
+
+.panel-badge {
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    background: #eafaf3;
+
+    color: #21955d;
+
+    font-size: 9px;
+
+    font-weight: 900;
+}
+
+
+/* Chart unit */
+
+.chart-unit {
+    padding: 7px 11px;
+
+    border-radius: 7px;
+
+    background: #edf6ff;
+
+    color: #2783c7;
+
+    font-size: 10px;
+
+    font-weight: 800;
+}
+
+
+/* =========================
+   MAP
+========================= */
+
+#riskMap {
+    width: 100%;
+
+    height: 430px;
+
+    border-radius: 11px;
+
+    overflow: hidden;
+}
+
+.map-legend {
+    display: flex;
+
+    gap: 22px;
+
+    margin-top: 14px;
+
+    font-size: 11px;
+
+    color: #69788e;
+}
+
+.map-legend div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+}
+
+.high-dot {
+    background: #ef4050;
+}
+
+.medium-dot {
+    background: #f3a712;
+}
+
+.low-dot {
+    background: #24ad6b;
+}
+
+
+/* =========================
+   CHART
+========================= */
+
+.chart-container {
+    position: relative;
+
+    height: 430px;
+}
+
+#rainfallChart {
+    width: 100% !important;
+
+    height: 100% !important;
+}
+
+
+/* =========================
+   FEATURE CARDS
+========================= */
+
+.features-section {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+
+    padding: 24px;
+
+    border-radius: 16px;
+
+    display: flex;
+
+    gap: 17px;
+
+    border: 1px solid #e8eef6;
+
+    box-shadow:
+        0 7px 25px rgba(30, 60, 100, 0.07);
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 12px 30px rgba(30, 60, 100, 0.12);
+}
+
+.feature-icon {
+    min-width: 47px;
+    height: 47px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #e9f7ff,
+        #edf1ff
+    );
+
+    font-size: 21px;
+}
+
+.feature-label {
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 1.4px;
+
+    color: #8491a5;
+}
+
+.feature-card h3 {
+    margin-top: 5px;
+
+    font-size: 17px;
+
+    color: #1b2d47;
+}
+
+.feature-card p {
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    color: #748298;
+}
+
+.feature-card button {
+    margin-top: 14px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #1684ce;
+
+    font-size: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    padding: 0;
+}
+
+.feature-card button:hover {
+    color: #075d9c;
+
+    text-decoration: underline;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #071a33;
+
+    color: #92a3bb;
+
+    text-align: center;
+
+    padding: 22px;
+
+    font-size: 11px;
+}
+
+footer span {
+    margin: 0 8px;
+
+    color: #2c9bd5;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        gap: 0;
+    }
+
+    .nav-button {
+        padding: 10px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-section {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .topbar {
+        padding: 0 20px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .risk-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-section {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 18px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 94%;
+
+        padding-top: 30px;
+    }
+
+    .hero-section h2 {
+        font-size: 28px;
+    }
+
+    #riskMap {
+        height: 350px;
+    }
+
+    .chart-container {
+        height: 350px;
+    }
+
+}
+/* ============================================================
+   LOGIN SCREEN
+   ============================================================ */
+
+.login-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #071a33,
+        #0b3154
+    );
+}
+
+.login-box {
+    width: 390px;
+    padding: 40px;
+
+    background: white;
+    border-radius: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.login-logo {
+    width: 60px;
+    height: 60px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #0b6efd;
+    color: white;
+
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.login-box h1 {
+    margin: 0;
+    color: #071a33;
+    font-size: 24px;
+}
+
+.login-box p {
+    margin: 8px 0 25px;
+    color: #667085;
+    font-size: 14px;
+}
+
+.login-box input {
+    width: 100%;
+    box-sizing: border-box;
+
+    padding: 13px 15px;
+    margin-bottom: 14px;
+
+    border: 1px solid #d0d5dd;
+    border-radius: 9px;
+
+    font-size: 14px;
+    outline: none;
+}
+
+.login-box input:focus {
+    border-color: #0b6efd;
+}
+
+.login-box button {
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+    border-radius: 9px;
+
+    background: #0b6efd;
+    color: white;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background: #0957c7;
+}
+
+#loginMessage {
+    margin-top: 15px;
+    font-size: 14px;
+}

@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Landslide Risk Intelligence</title>
+
+    <!-- Leaflet Map -->
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <!-- LOGIN SCREEN -->
+    <div id="loginScreen" class="login-screen">
+
+        <div class="login-box">
+
+            <div class="login-logo">◉</div>
+
+            <h1>LANDSLIDE MONITOR</h1>
+
+            <p>Risk Intelligence & Monitoring System</p>
+
+            <input
+                type="text"
+                id="loginUsername"
+                placeholder="Username"
+            >
+
+            <input
+                type="password"
+                id="loginPassword"
+                placeholder="Password"
+            >
+
+            <button onclick="loginUser()">
+                LOGIN
+            </button>
+
+            <div id="loginMessage"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- TOP NAVIGATION -->
+    ...
+
+<!-- =========================
+     TOP NAVIGATION
+========================= -->
+
+<header class="topbar">
+
+    <div class="brand">
+
+        <div class="brand-icon">
+            🌍
+        </div>
+
+        <div>
+            <h1>LANDSLIDE MONITOR</h1>
+            <p>Risk Intelligence & Monitoring System</p>
+        </div>
+
+    </div>
+
+
+    <nav class="navbar">
+
+
+        <!-- DASHBOARD DROPDOWN -->
+
+        <div class="nav-dropdown">
+
+            <button class="nav-button">
+                Dashboard <span>▾</span>
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="#dashboard">
+                    Overview
+                </a>
+
+                <a href="#risk-map">
+                    Risk Map
+                </a>
+
+                <a href="#analytics">
+                    Rainfall Analytics
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIMULATOR DROPDOWN -->
+
+        <div class="nav-dropdown">
+
+            <button class="nav-button">
+                Simulator <span>▾</span>
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="#simulator">
+                    DAS Simulation Lab
+                </a>
+
+                <a href="#simulator">
+                    Rainfall Simulation
+                </a>
+
+                <a href="#simulator">
+                    Risk Prediction
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- REPORTS DROPDOWN -->
+
+        <div class="nav-dropdown">
+
+            <button class="nav-button">
+                Reports <span>▾</span>
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="#reporting">
+                    Incident Reporting
+                </a>
+
+                <a href="#reporting">
+                    Field Observation
+                </a>
+
+                <a href="#reporting">
+                    Submit Report
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- AERIAL VIEW DROPDOWN -->
+
+        <div class="nav-dropdown">
+
+            <button class="nav-button">
+                Aerial View <span>▾</span>
+            </button>
+
+            <div class="dropdown-menu">
+
+                <a href="#aerial">
+                    Satellite Intelligence
+                </a>
+
+                <a href="#aerial">
+                    Terrain View
+                </a>
+
+                <a href="#aerial">
+                    Affected Regions
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <div class="live-status">
+
+        <span class="live-dot"></span>
+
+        LIVE
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN DASHBOARD
+========================= -->
+
+<main class="container" id="dashboard">
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero-section">
+
+        <div>
+
+            <p class="section-label">
+                AI-POWERED DISASTER INTELLIGENCE
+            </p>
+
+            <h2>
+                Landslide Risk
+                <span>Monitoring</span>
+            </h2>
+
+            <p class="hero-text">
+
+                Monitor rainfall conditions, identify
+                potential landslide zones and analyse
+                environmental risk in real time.
+
+            </p>
+
+        </div>
+
+
+        <div class="system-status">
+
+            <span class="status-circle"></span>
+
+            System Operational
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         RISK CARDS
+    ========================= -->
+
+    <section class="risk-cards">
+
+
+        <!-- HIGH -->
+
+        <div class="risk-card high-card">
+
+            <div class="card-top">
+
+                <div class="risk-icon">
+                    ⚠
+                </div>
+
+                <span class="risk-tag">
+                    HIGH RISK
+                </span>
+
+            </div>
+
+            <h3 id="highRisk">
+                0
+            </h3>
+
+            <p>
+                High-risk locations
+            </p>
+
+            <small>
+                Immediate attention required
+            </small>
+
+        </div>
+
+
+
+        <!-- MEDIUM -->
+
+        <div class="risk-card medium-card">
+
+            <div class="card-top">
+
+                <div class="risk-icon">
+                    ◈
+                </div>
+
+                <span class="risk-tag">
+                    MEDIUM RISK
+                </span>
+
+            </div>
+
+            <h3 id="mediumRisk">
+                0
+            </h3>
+
+            <p>
+                Medium-risk locations
+            </p>
+
+            <small>
+                Continuous monitoring required
+            </small>
+
+        </div>
+
+
+
+        <!-- LOW -->
+
+        <div class="risk-card low-card">
+
+            <div class="card-top">
+
+                <div class="risk-icon">
+                    ✓
+                </div>
+
+                <span class="risk-tag">
+                    LOW RISK
+                </span>
+
+            </div>
+
+            <h3 id="lowRisk">
+                0
+            </h3>
+
+            <p>
+                Low-risk locations
+            </p>
+
+            <small>
+                Currently stable
+            </small>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         MAP + ANALYTICS
+    ========================= -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- MAP -->
+
+        <div class="panel map-panel" id="risk-map">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="panel-label">
+                        LIVE MONITORING
+                    </p>
+
+                    <h3>
+                        Landslide Risk Map
+                    </h3>
+
+                </div>
+
+                <span class="panel-badge">
+                    ● LIVE DATA
+                </span>
+
+            </div>
+
+
+            <div id="riskMap"></div>
+
+
+            <div class="map-legend">
+
+                <div>
+                    <span class="legend-dot high-dot"></span>
+                    High
+                </div>
+
+                <div>
+                    <span class="legend-dot medium-dot"></span>
+                    Medium
+                </div>
+
+                <div>
+                    <span class="legend-dot low-dot"></span>
+                    Low
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RAINFALL -->
+
+        <div class="panel chart-panel" id="analytics">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <p class="panel-label">
+                        WEATHER ANALYTICS
+                    </p>
+
+                    <h3>
+                        Rainfall Analysis
+                    </h3>
+
+                </div>
+
+                <span class="chart-unit">
+                    mm
+                </span>
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas id="rainfallChart"></canvas>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FEATURE SECTION
+    ========================= -->
+
+    <section class="features-section">
+
+
+        <!-- RISK SIMULATION -->
+
+        <div class="feature-card" id="simulator">
+
+            <div class="feature-icon">
+                🧪
+            </div>
+
+            <div>
+
+                <p class="feature-label">
+                    PREDICTION LAB
+                </p>
+
+                <h3>
+                    DAS Simulation
+                </h3>
+
+                <p>
+                    Simulate rainfall conditions and
+                    understand how environmental
+                    changes can influence landslide risk.
+                </p>
+
+                <button onclick="openSimulator()">
+                    Launch Simulation →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- INCIDENT REPORTING -->
+
+        <div class="feature-card" id="reporting">
+
+            <div class="feature-icon">
+                📍
+            </div>
+
+            <div>
+
+                <p class="feature-label">
+                    FIELD INTELLIGENCE
+                </p>
+
+                <h3>
+                    Incident Reporting
+                </h3>
+
+                <p>
+                    Submit field observations and
+                    report suspicious ground conditions
+                    from affected areas.
+                </p>
+
+                <button onclick="openReporting()">
+                    Submit Report →
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SATELLITE -->
+
+        <div class="feature-card" id="aerial">
+
+            <div class="feature-icon">
+                🛰
+            </div>
+
+            <div>
+
+                <p class="feature-label">
+                    REMOTE SENSING
+                </p>
+
+                <h3>
+                    Satellite Intelligence
+                </h3>
+
+                <p>
+                    Explore terrain and affected regions
+                    using satellite-based monitoring.
+                </p>
+
+                <button onclick="openAerialView()">
+                    Explore Aerial View →
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <p>
+        Landslide Risk Intelligence
+        <span>•</span>
+        AI-Based Disaster Monitoring
+    </p>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT LIBRARIES
+========================= -->
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
